@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/mathieu.fenniak/.oh-my-zsh
@@ -89,4 +90,8 @@ ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE="%{$fg_bold[green]%}↑%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE="%{$fg_bold[magenta]%}↕%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_EQUAL_REMOTE="%{$fg_bold[green]%}=%{$reset_color%}"
 PROMPT=$'${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)$(git_remote_status)\n$ '
+
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
