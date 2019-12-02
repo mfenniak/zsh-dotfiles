@@ -1,9 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-if [[ -z $HOME/.cargo ]];
-then
-    export PATH="$HOME/.cargo/bin:$PATH"
-fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -77,6 +73,16 @@ plugins=(git terraform aws docker)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# add cargo bin to path if available
+if [[ -z $HOME/.cargo ]];
+then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+# Slight tweak to avit's default prompt; removes an extra EOL at the beginning
+PROMPT='$(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
+%{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
