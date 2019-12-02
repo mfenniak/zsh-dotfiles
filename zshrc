@@ -75,7 +75,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # add cargo bin to path if available
-if [[ -z $HOME/.cargo ]];
+if [[ -d $HOME/.cargo ]];
 then
     export PATH="$HOME/.cargo/bin:$PATH"
 fi
@@ -108,8 +108,10 @@ PROMPT='$(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if [[ -z $HOME/.nvm ]];
+if [[ -d $HOME/.nvm ]];
 then
     export NVM_DIR="$HOME/.nvm"
-    . "/usr/local/opt/nvm/nvm.sh"
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
+
