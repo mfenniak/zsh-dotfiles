@@ -68,7 +68,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git terraform aws docker)
+plugins=(git terraform aws docker zsh-iterm-touchbar)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,4 +114,6 @@ then
     [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
     [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
+
+TOUCHBAR_GIT_ENABLED=true
 
