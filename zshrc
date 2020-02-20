@@ -81,8 +81,8 @@ then
 fi
 
 # Slight tweak to avit's default prompt; removes an extra EOL at the beginning
-PROMPT='$(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
-%{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
+PROMPT='$(_user_host)${_current_dir} $(git_prompt_info) $(ruby_prompt_info)
+%{%F{%(!.red.white)}%}▶%{$resetcolor%} '
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -113,6 +113,11 @@ then
     export NVM_DIR="$HOME/.nvm"
     [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
     [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+fi
+
+if [[ -d /usr/local/opt/python/libexec/bin ]];
+then
+    export PATH=/usr/local/opt/python/libexec/bin:$PATH
 fi
 
 TOUCHBAR_GIT_ENABLED=true
