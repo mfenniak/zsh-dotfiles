@@ -81,8 +81,8 @@ then
 fi
 
 # Slight tweak to avit's default prompt; removes an extra EOL at the beginning
-PROMPT='$(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
-%{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
+PROMPT='$(_user_host)${_current_dir} $(git_prompt_info) $(ruby_prompt_info)
+%{%F{%(!.red.white)}%}▶%{$resetcolor%} '
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -117,7 +117,7 @@ fi
 
 if [[ -d /usr/local/opt/python/libexec/bin ]];
 then
-    export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+    export PATH=/usr/local/opt/python/libexec/bin:$PATH
 fi
 
 TOUCHBAR_GIT_ENABLED=true
